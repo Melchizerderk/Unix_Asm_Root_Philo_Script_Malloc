@@ -1,0 +1,7 @@
+gdb ./ch6
+break main
+run test
+dis pour afficher le code du main
+ni pour avancer jusque sur le cmp et affichage de la valeur contenue dans DWORD PTR [esp+0x1c]
+en utilisant x/d esp+0x1c puisque on a un call de la fonction atoi juste avant, ce qui signifie
+que notre chaine est convertie en integer pour la comparaison.

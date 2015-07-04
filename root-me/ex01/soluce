@@ -1,0 +1,5 @@
+mkdir /tmp/bcrespin
+cp /bin/cat /tmp/bcrespin/ls
+PATH=/tmp/bcrespin/:$PATH
+./ch1
+affichage du pwd
