@@ -1,0 +1,5 @@
+./ch11 | vim /tmp/tmp_file.txt
+
+vim va s'ouvrir en meme temps que les droits d'ecriture vont etre verifier
+ce qui laisse le temps a ch11 d'ecrire dans tmp file avant que lui sois retourner
+que c'est un read_only
